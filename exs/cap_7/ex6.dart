@@ -11,16 +11,15 @@ import 'dart:io';
 
 void main() {
   int resultado = 0;
+  int j = 0;
   List<List<int>> matriz = List.generate(
       2, (row) => List<int>.generate(2, (col) => Random().nextInt(20)));
 
   for (var row in matriz) {
     for (var element in row) {
-      stdout.write(" $element ");
+      stdout.write(" ${element} ");
       resultado += element;
     }
     print('');
   }
-
-  print(resultado);
 }
