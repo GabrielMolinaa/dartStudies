@@ -4,7 +4,6 @@ void main() {
   List<List<double>> matriz =
       List.generate(7, (index) => List<double>.filled(10, 0));
   double soma = 0;
-  List somaColunas = [];
   for (int i = 0; i < 6; i++) {
     for (int j = 0; j < 10; j++) {
       print("Valor [$i][$j]: ");

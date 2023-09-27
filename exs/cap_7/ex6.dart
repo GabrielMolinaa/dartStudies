@@ -11,7 +11,6 @@ import 'dart:io';
 
 void main() {
   int resultado = 0;
-  int j = 0;
   List<List<int>> matriz = List.generate(
       20, (row) => List<int>.generate(10, (col) => Random().nextInt(20)));
 
