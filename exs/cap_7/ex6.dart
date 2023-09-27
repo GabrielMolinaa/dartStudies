@@ -13,13 +13,29 @@ void main() {
   int resultado = 0;
   int j = 0;
   List<List<int>> matriz = List.generate(
-      2, (row) => List<int>.generate(2, (col) => Random().nextInt(20)));
+      20, (row) => List<int>.generate(10, (col) => Random().nextInt(20)));
 
-  for (var row in matriz) {
-    for (var element in row) {
-      stdout.write(" ${element} ");
-      resultado += element;
+  List<int> vetorA = [];
+
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 20; j++) {
+      resultado += matriz[j][i];
     }
-    print('');
+    print("Resultado coluna[$i]: $resultado");
+    vetorA.add(resultado);
+    resultado = 0;
+  }
+
+  for (int i = 0; i < 10; i++) {
+    for (int j = 0; j < 20; j++) {
+      matriz[j][i] *= vetorA[i];
+    }
+  }
+
+  for (int i = 0; i < 20; i++) {
+    for (int j = 0; j < 10; j++) {
+      stdout.write(" ${matriz[i][j]} ");
+    }
+    print(' ');
   }
 }
