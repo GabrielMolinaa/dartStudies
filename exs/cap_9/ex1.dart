@@ -5,7 +5,13 @@ void main() {
   print("Digite uma frase:");
   frase = stdin.readLineSync()!;
 
-  for (int i = 0; i < frase.length; i++) {
-    stdout.write("${frase[i]}!");
+  frase = frase.toUpperCase();
+  frase = frase.replaceAll(RegExp('[^AEIOU ]'), '#');
+  List<String> inverso = [];
+
+  for (int i = frase.length - 1; i >= 0; i--) {
+    inverso.add(frase[i]);
   }
+
+  print(inverso.join(''));
 }
