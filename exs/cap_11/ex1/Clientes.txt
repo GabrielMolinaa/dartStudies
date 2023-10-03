@@ -1,0 +1,5 @@
+Cod_Cli	Nome	Endereco
+1	João	Rua A
+2	Maria	Rua B
+3	Jose	Rua C
+4	Lilas	Rua D
