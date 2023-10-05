@@ -2,12 +2,12 @@ import 'dart:io';
 
 List<double> leAssinatura() {
   print("Bem-vindo ao detector automático de COH-PIAH.");
-  double wal = 4.79;
-  double ttr = 0.72;
-  double hlr = 0.56;
-  double sal = 80.5;
-  double sac = 2.5;
-  double pal = 31.6;
+  double wal = 4.51;
+  double ttr = 0.693;
+  double hlr = 0.55;
+  double sal = 70.82;
+  double sac = 1.82;
+  double pal = 38.5;
 
   return [wal, ttr, hlr, sal, sac, pal];
 }
@@ -53,7 +53,10 @@ int numeroPalavrasUnicas(List<String> palavras) {
     String palavra = element.toLowerCase();
 
     if (frequencia.containsKey(palavra)) {
+      if (frequencia[palavra] == 1) {
         contPalavrasUnicas--;
+      }
+      frequencia[palavra] = (frequencia[palavra] ?? 0) + 1;
     } else {
       frequencia[palavra] = 1;
       contPalavrasUnicas++;
@@ -157,7 +160,7 @@ void main() {
   List<String> textos = [];
   //textos.add("O, gato roeu a roupa. o Rei.");
   textos.add(
-      "Muito além, nos confins inexplorados da região mais brega da Borda Ocidental desta Galáxia, há um pequeno sol amarelo e esquecido. Girando em torno deste sol, a uma distancia de cerca de 148 milhões de quilômetros, há um planetinha verde-azulado absolutamente insignificante, cujas formas de vida, descendentes de primatas, são tão extraordinariamente primitivas que ainda acham que relógios digitais são uma grande ideia.");
+      "Então resolveu ir brincar com a Máquina pra ser também imperador dos filhos da mandioca. Mas as três cunhas deram muitas risadas e falaram que isso de deuses era gorda mentira antiga, que não tinha deus não e que com a máquina ninguém não brinca porque ela mata. A máquina não era deus não, nem possuía os distintivos femininos de que o herói gostava tanto. Era feita pelos homens. Se mexia com eletricidade com fogo com água com vento com fumo, os homens aproveitando as forças da natureza. Porém jacaré acreditou? nem o herói! Se levantou na cama e com um gesto, esse sim! bem guaçu de desdém, tó! batendo o antebraço esquerdo dentro do outro dobrado, mexeu com energia a munheca direita pras três cunhas e partiu. Nesse instante, falam, ele inventou o gesto famanado de ofensa: a pacova.");
   int c = avaliaTextos(textos, parametros);
   print("O autor do texto ${c + 1} está infectado com COH-PIAH");
 }
